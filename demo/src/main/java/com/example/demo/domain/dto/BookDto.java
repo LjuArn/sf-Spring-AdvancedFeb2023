@@ -1,14 +1,13 @@
 package com.example.demo.domain.dto;
 
 import com.example.demo.domain.entity.AuthorEntity;
-import jakarta.persistence.ManyToOne;
 
 public class BookDto {
 
     private Long id;
     private String title;
     private String isbn;
-    private AuthorEntity author;
+    private AuthorDto author;
 
     public BookDto() {
     }
@@ -40,11 +39,11 @@ public class BookDto {
         return this;
     }
 
-    public AuthorEntity getAuthor() {
+    public AuthorDto getAuthor() {
         return author;
     }
 
-    public BookDto setAuthor(AuthorEntity author) {
+    public BookDto setAuthor(AuthorDto author) {
         this.author = author;
         return this;
     }
