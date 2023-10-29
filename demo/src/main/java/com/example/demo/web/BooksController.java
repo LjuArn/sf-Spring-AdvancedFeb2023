@@ -23,9 +23,8 @@ public class BooksController {
     @GetMapping
     public ResponseEntity<List<BookDto>> getAllBooks() {
 
-        return ResponseEntity.ok(bookService.getAllBooks());
-
-
+        return ResponseEntity
+                .ok(bookService.getAllBooks());
     }
 
 
@@ -33,8 +32,8 @@ public class BooksController {
     public ResponseEntity<BookDto> getBookById(@PathVariable("id") Long bookId) {
         Optional<BookDto> theBook = bookService.getBookById(bookId);
 
-
-        return theBook.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+        return theBook.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
 
